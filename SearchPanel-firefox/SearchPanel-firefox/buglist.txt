@@ -1,0 +1,3 @@
+bugs firefox:
+- bookmark add/delete
+- onhashchange doesnt fire?

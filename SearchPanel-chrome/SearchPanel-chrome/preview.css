@@ -1,0 +1,279 @@
+.pp_preview { /** attention: this is defined by style attribute explicit in query_preview again */
+	position: fixed !important;
+	top: 300px;
+	min-height: 300px;
+	right: 0px;
+	z-index: 1010101;
+	display: inline-block;
+	width: 0px;
+	margin: 0px ! important;
+	border: none ! important;
+	overflow: hidden;
+}
+
+.pp_preview_snippet { /** attention: this is defined by style attribute explicit in query_preview again */
+	position: fixed !important;
+	right: 75px;
+	z-index: 1010101;
+	display: inline-block;
+	margin: 0px ! important;
+	border: none ! important;
+	overflow: hidden;
+}
+
+.pp_iframe { /** attention: this is defined by style attribute explicit in query_preview again */
+	top: 0px;
+	right: 0px;
+	width: 100%;
+	height: 100%;
+	margin: 0px ! important;
+	border: none ! important;
+	overflow: hidden  ! important;
+	background-color: transparent  ! important;
+	padding: 0  ! important;
+}
+
+.pp_iframe_body {
+	top: 0px;
+	right: 0px; 
+	margin: 0px ! important;
+	border: none ! important;
+	overflow: hidden;
+/*	opacity: 0.85;
+	box-shadow: 0px 0px 3px 3px #EBEBEB;
+	-webkit-box-shadow: 0px 0px 3px 3px #EBEBEB;
+	-moz-box-shadow: 0px 0px 3px 3px #EBEBEB;
+ 	background-color: darkgray; */
+}
+
+.pp_frame {
+	width: 100% ! important;
+	padding: 0px ! important;
+}
+
+.pp_container {
+	width: 100% ! important;
+	height: 16px ! important;
+	padding: 4px 0px ! important;
+	position: relative;
+	cursor: pointer;
+	background-color: transparent ! important;
+	margin-left: 3px;
+}
+	
+.pp_container:hover {
+	background-image: url('chrome-extension://__MSG_@@extension_id__/icons/modern/select.png');
+	background-repeat: no-repeat;
+	background-position: 1px 3px;
+	background-size: auto 18px;
+	/*border-radius: 10px 0px 0px 10px;*/
+}
+
+.pp_container:hover .pp_icon {
+	opacity: 1;
+}
+	
+.pp_bar {
+	height: 16px;
+	/*right: 16px;
+	top: 0px;
+	position: absolute;
+	box-shadow: -1px 0px 2px 1px #444 ! important;
+	-webkit-box-shadow: -1px 1px 2px 1px #444 ! important;*/
+	/*box-shadow: -1px 0px 3px 1px rgb(111, 111, 111);*/
+	
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	background-size: 100%;
+	
+	float: right;
+}
+
+.pp_bar:before {
+	content:"";
+	display:block; 
+    width:100%;
+    height: 16px;
+    float:right;
+	background-image: url('chrome-extension://__MSG_@@extension_id__/icons/modern/bar-gradient.png');
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	background-size: 100%;
+}
+
+.pp_bar:after {
+	content:"";
+	display:block; 
+    width:5px;
+    height: 16px;
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	margin-left: -5px;	
+}
+
+.pp_bar.pp_new {
+	background-image: url('chrome-extension://__MSG_@@extension_id__/icons/modern/bar-green.png');
+}
+
+.pp_bar.pp_new:after {
+	background-image: url('chrome-extension://__MSG_@@extension_id__/icons/modern/bar-green-end.png');
+}
+
+
+
+.pp_bar.pp_clicked {
+	background-image: url('chrome-extension://__MSG_@@extension_id__/icons/modern/bar-purple.png');
+}
+
+.pp_bar.pp_clicked:after {
+	background-image: url('chrome-extension://__MSG_@@extension_id__/icons/modern/bar-purple-end.png');
+}
+
+
+.pp_bar.pp_unclicked {
+	background-image: url('chrome-extension://__MSG_@@extension_id__/icons/modern/bar-blue.png');
+}
+
+.pp_bar.pp_unclicked:after {
+	background-image: url('chrome-extension://__MSG_@@extension_id__/icons/modern/bar-blue-end.png');
+}
+
+.pp_barBookmark {
+	background-image: url('chrome-extension://__MSG_@@extension_id__/icons/modern/GreyStar-shadow.png');
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	display: inline-block;
+	height: 21px;
+	width: 21px;
+	float: left;
+	/*margin-left: 20px;*/
+	position: absolute;
+	top: 1px;
+	z-index: 2;
+}
+
+.pp_barBookmark.pp_currentPage {
+	background-image: url('chrome-extension://__MSG_@@extension_id__/icons/modern/GreyStar-NOshadow.png');
+}
+
+.pp_barBookmark:hover {
+	background-image: url('chrome-extension://__MSG_@@extension_id__/icons/modern/GreyStar-glow.png');
+}
+
+.pp_barHighlightBookmark {
+	background-image: url('chrome-extension://__MSG_@@extension_id__/icons/modern/orangeStar-shadow.png');
+}
+
+.pp_barHighlightBookmark.pp_currentPage {
+	background-image: url('chrome-extension://__MSG_@@extension_id__/icons/modern/orangeStar-NOshadow.png');
+}
+
+.pp_barHighlightBookmark:hover {
+	background-image: url('chrome-extension://__MSG_@@extension_id__/icons/modern/orangeStar-glow.png');
+}
+
+.pp_barHighlightIntelligence {
+	z-index: 2;
+}
+
+.pp_selected {
+	background-image: url('chrome-extension://__MSG_@@extension_id__/icons/modern/circle.png');
+	background-repeat: no-repeat;
+	background-position: 0px 1px;
+	display: inline-block;
+	height: 21px;
+	width: 21px;
+	float: left;
+	/*margin-left: 20px;*/
+	position: absolute;
+	top: 1px;
+	z-index: 1;
+}
+
+.pp_searchSwitcherBox {
+	margin-left: 2px;
+/*	background-color: rgb(231,231,231); */
+}
+
+.pp_searchSwitcher { /** attention: this is defined by style attribute explicit in plugins/searchengineswitcher.js again */ 
+	width: 14px;
+	height: 14px;
+	margin-top: 1px;
+	/*background-color: rgb(255,255,255); */
+	border: solid 1px transparent;
+	opacity:0.4;
+	margin-right: 2px;
+	border-radius: 3px;
+}
+
+.pp_searchSwitcher:hover {
+	opacity:1;
+	/*border: solid 1px rgb(255,255,255); */
+}
+
+.pp_searchSwitcherSelected {
+	border: solid 1px rgb(0,0,0);
+	opacity:1;
+}
+
+.pp_top {
+	background-image: url('chrome-extension://__MSG_@@extension_id__/icons/modern/top-bar.png');
+	background-repeat: no-repeat;
+	position: relative;
+	height: 18px; 
+}
+
+.pp_body {
+	padding-top: 5px;
+	background-image: url('chrome-extension://__MSG_@@extension_id__/icons/modern/base-main.png');
+	background-repeat: repeat-y;
+	border-radius: 0px 0px 0px 16px;
+}
+
+.pp_bottom {
+	background-image: url('chrome-extension://__MSG_@@extension_id__/icons/modern/base-bottom.png');
+	background-repeat: no-repeat;
+	height: 16px;
+	/*background-color: #fff;*/
+	margin-top: -15px;
+}
+
+.pp_clean {
+/*
+	padding: 0px;*/
+}
+
+.pp_contents {
+	/*box-shadow: -1px -1px 5px #EBEBEB, -1px 1px 5px #EBEBEB; */
+}
+
+.pp_icon {
+	float: right;
+	height: 16px;
+	width: 16px;
+	margin-right: 0px;
+	margin-top: 0px;'
+	border: none;
+	/*position: relative;
+	top: -4px;*/
+	background-color: #ffffff; 
+	box-shadow: 0px 0px 8px 0.1px rgba(0, 0, 0, 0.5) inset;
+	opacity: 0.8;
+}
+
+span.pp_icon  {
+	background-color: #666; 
+	opacity: 0.8;
+}
+
+span.pp_icon:before  {
+	border: none;
+}
+
+.pp_icon:before { /* does not work as expected */
+	content:"";
+	position: absolute;
+	width: 14px;
+	height: 14px;
+	border: solid 1px rgb(180, 180, 180);
+}

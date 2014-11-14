@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Search Panel - Welcome</title>
+</head>
+<head>
+    <style>
+    body {
+        margin: auto; /* center in viewport */
+        background-color: white;
+        background-size: 100%;
+        font-family: sans-serif;
+    }
+    
+       p, div.para {
+   		margin-top: 1em;
+   		/*margin-bottom: 1em;*/
+   	}
+    .main {
+    	margin: 20px;
+    }
+    
+    h1 {
+    	color: #1e5184;
+    }
+    h2 {
+    	color: #1e5184;
+    	margin-top: 2px;
+    	margin-bottom: 2px;
+    }
+    
+    h3 {
+    	color: #1e5184;
+    	cursor: pointer;
+    }
+    .content {
+        min-height: 30px;
+	    padding: 10px;
+	    margin-top: 15px;
+	    border-radius: 15px;
+	    overflow: hidden;
+	    background-color: rgb(243, 243, 243);
+	    position: relative;
+    }
+    
+    
+    /*Button Style*/
+.button {
+    float:left;
+    height:auto;
+    font:76%/150% "Lucida Grande", Geneva, 
+    Verdana, Arial, Helvetica, sans-serif;
+    width:10em;
+    text-align:center;
+    white-space:nowrap;
+}
+/*Button Arrow Styles*/
+.arrows {
+    font-size:90%;
+    margin:0.2em;
+}
+/*Button link styles*/
+.button a, .button a:visited {
+    color: #eee;
+    background-color:#1e5184;
+    font-size:1em;
+    font-weight:bolder;
+    text-decoration: none;
+    border-bottom:0.1em solid #555;
+    border-right:0.1em solid #555;
+    border-top:0.1em solid #ccc;
+    border-left:0.1em solid #ccc;
+    margin: 0.2em;
+    padding:0.2em;
+    display:block;
+    cursor: pointer;
+}
+.button a:hover {
+    background-color:#003366;
+    color:#999;
+    border-top:0.1em solid #777;
+    border-left:0.1em solid #777;
+    border-bottom:0.1em solid #aaa;
+    border-right:0.1em solid #aaa;
+    padding:0.2em;
+    margin: 0.2em;
+}
+
+.point {
+color: white;
+/*background: url(dot.png);*/
+background-color: rgb(241,90,36);
+border-radius: 9px;
+width: 17px;
+height: 17px;
+background-repeat: no-repeat;
+display: inline-block;
+font-size: 15px;
+text-align: center;
+margin-right: 5px;
+font-weight: bold;
+text-align: center;
+}
+
+.image {
+position: relative;
+	/*float: left;*/
+	display: inline-block;
+    padding-right: 10px;
+}
+
+.highlighter {
+position: absolute;
+left: 37px;
+opacity: 0.9;
+width: 90px;
+height: 22px;
+margin-left: -5px;
+margin-top: -2px;
+
+}
+
+.ne {
+	display: none
+}
+
+.hide {
+display: none;
+background-color: transparent !important;
+}
+    
+.small {
+height: 20px;
+background-color: transparent !important;
+}
+
+.column {
+	vertical-align: top;
+}
+
+.description {
+	padding: 10px;
+	border-radius: 15px;
+	background-color: white;
+	/*width: 750px;*/
+	margin: 2px;
+	overflow: hidden;
+}
+
+.description .b {
+	border: 5px solid rgb(243,243,243);
+	margin-left: 20px;
+	border-radius: 15px;
+	width: 90%;
+	max-width: 550px;
+}
+
+.description h3 {
+margin: 0px;
+font-size: 20px;
+}
+
+.nav {
+	margin: 10px 0px 0px 0px;
+}
+.pp_container {
+	width: 100% ! important;
+	height: 16px ! important;
+	padding: 4px 0px ! important;
+	position: relative;
+	cursor: pointer;
+	background-color: transparent ! important;
+}
+
+.pp_container:hover .pp_icon {
+	opacity: 1;
+}
+	
+.pp_bar {
+	height: 16px;
+	/*right: 16px;
+	top: 0px;
+	position: absolute;
+	box-shadow: -1px 0px 2px 1px #444 ! important;
+	-webkit-box-shadow: -1px 1px 2px 1px #444 ! important;*/
+	/*box-shadow: -1px 0px 3px 1px rgb(111, 111, 111);*/
+	
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	background-size: 100%;
+	
+	float: right;
+}
+
+.example {
+	margin-right: 10px;
+	margin-left: 30px;
+	float: left ! important;
+	width: 50px;
+}
+
+.pp_bar:before {
+	content:"";
+	display:block; 
+    width:100%;
+    height: 16px;
+    float:right;
+	background-image: url('icons/modern/bar-gradient.png');
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	background-size: 100%;
+}
+
+.pp_bar:after {
+	content:"";
+	display:block; 
+    width:5px;
+    height: 16px;
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	margin-left: -5px;	
+}
+
+.pp_bar.pp_new {
+	background-image: url('icons/modern/bar-green.png');
+}
+
+.pp_bar.pp_new:after {
+	background-image: url('icons/modern/bar-green-end.png');
+}
+
+
+
+.pp_bar.pp_clicked {
+	background-image: url('icons/modern/bar-purple.png');
+}
+
+.pp_bar.pp_clicked:after {
+	background-image: url('icons/modern/bar-purple-end.png');
+}
+
+
+.pp_bar.pp_unclicked {
+	background-image: url('icons/modern/bar-blue.png');
+}
+
+.pp_bar.pp_unclicked:after {
+	background-image: url('icons/modern/bar-blue-end.png');
+}
+    
+
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        	<h1>Search Panel</h1>
+        	<div class="content ne" id='loggin_activated'>
+			<h1>Logging activated!</h1>
+			<img src="icons/check-24.png"><span>Thank you for helping us!</span>
+			</div>
+			
+			<div class="content ne" id='loggin_deactivated'>
+			<h1>Logging deactivated!</h1>
+			<img src="icons/cross-24.png"><span>Logging is now deactivated!</span>
+			</div>
+			
+			<div class="content ne" id='cleared'>
+			<h1>All history data deleted!</h1>
+			<img src="icons/check-24.png"><span>The widget has been successfully resetted. All data has been cleared!</span>
+			</div>
+			
+			
+			<div class="content" id='firststart'>
+			<h2>Successfully installed!</h2>
+			<p><img src="icons/check-24.png"> Congratulations,
+				you have successfully installed Search Panel! Version: <span id="version">??</span></p>
+			</div>
+		
+			<div class="content">
+				<h2>Introduction</h2>
+				<p>The Search Panel keeps track of sites you have searched	for in the past, and reminds whether you have seen
+				them before. It also helps manage your bookmarks.
+				The widget appears automatically as soon as you start a web search on a supported search engine.</p>
+				<p>Take a moment to review this tutorial; you can always return here by right-clicking on the extension's icon 
+				(<img src="icons/inactive.png">)
+				and selecting the 'Options' menu.</p>
+				
+				<p>By the way, the color of the icon indicates the status of the extension:</p>
+				<div class='para' style="margin-left: 10px;">
+					<div><img src="icons/on.png"> Recognized results page</div>
+					<div><img src="icons/inactive.png"> Regular web page</div>
+					<div><img src="icons/off.png"> Clicking on the icon will temporarily disable the extension; clicking on it
+					again will enable it. </div>
+				</div>
+			</div>
+			
+			<div class="content" id='simple'>
+				<h2>Overview</h2>
+				<table><tr>
+				<td width="135" class="column">
+				<div>
+					<div class="highlighter" style="width: 70px;"></div>
+					<img  class="img" src="querypreview_simple.png">
+					</div>
+				</td>
+				<td width="*" class="column">
+					
+				<div class='description current' id='desc-simple-1'>
+				  <h3><span class='point'>1</span>Search Engine Selection</h3>
+				  <p>Sometimes it helps to search for the same thing in a different search engine. This area allows you to run the 
+				  last query on different search engines easily. Click on the search engine of your choice to re-run the query. 
+				  The current search engine is highlighted with a small black border; clicking on it will return you to the last 
+				  search results page.</p>
+				</div>
+				
+				<div class='description hide' id='desc-simple-2'>
+				
+				  <h3><span class='point'>2</span>Different bars</h3>
+				  <p>Each bar represents one document in the current results. The colors reflect the retrieval state of a web site. <br/>
+				  <div>
+				 	 <div class="pp_bar example pp_clicked"></div><p>
+				 	 Visited Link - this color mean the web site that has been visited in the past.</p>
+				 	 
+				 	 <div class="pp_bar example pp_new"></div>
+				 	 <p>New Link - A web site that has never been retrieved before with any other query.</p>
+					 
+				 	<div class="pp_bar example pp_unclicked"></div>
+			  		<p>Unclicked - A web site that has been retrieved before, but has never been clicked on.</p>
+				 </div>
+				</div>
+				
+				<div class='description hide' id='desc-simple-3'>
+				
+				  <h3><span class='point'>3</span>Icon</h3>
+				  <p>When available, a site is represented by a unique icon to help you recognize it quickly.</p> 
+				</div>
+				
+				<div class='description hide' id='desc-simple-4'>
+				
+				  <h3><span class='point'>4</span>Current Page Indicator</h3>
+				  <p>The circle around the star indicates that this is the result page you are on right now. 
+				  If you click on a link on the website, the indicator reminds you of the retrieved document from which 
+				  you started browsing.</p>  
+				</div>
+				
+				<div class='description hide' id='desc-simple-5'>
+				
+				  <h3><span class='point'></span>Start using it...</h3>
+				  <p>Alright, now you know the basics. Go on <a href="http://www.google.com/">Google</a>, 
+				  <a href="http://www.yahoo.com/">Yahoo</a> or <a href="http://www.bing.com/">Bing</a> and try it yourself! 
+				  And remember that you can always return to this tutorial from the Options menu on the extension icon 
+				  (<img src="icons/on.png">).
+				</div>
+			
+				<div class='nav'>
+				<span class="button"> 
+				    <a title="next">
+				        Next
+				        <span class="arrows">
+				            &nbsp;&#187;
+				        </span>
+				    </a>
+					</span>
+				</div>
+				</td></tr>
+				</table>
+			</div>
+			
+			<div class="content" id='complex'>
+				<h2>Overview</h2>
+				<table><tr>
+				<td width="135" class="column">
+				<div>
+					<div class="highlighter"></div>
+					<img  class="img" src="querypreview.png">
+					</div>
+				</td>
+				<td width="*" class="column">
+				<strong>Congratulations! You have been selected to test an enriched version of the widget!</strong><br> 
+				Check out the quick tutorial below to see the exciting new features in this version!<br><br>
+
+				<div class='description current' id='desc-complex-1'>
+				  <h3><span class='point'>1</span>Search Engine Selection</h3>
+				  <p>Sometimes it helps to search for the same thing in a different search engine. This area allows you to run the 
+				  last query on different search engines easily. Click on the search engine of your choice to re-run the query. 
+				  The current search engine is highlighted with a small black border; clicking on it will return you to the last 
+				  search results page.</p>
+				</div>
+				
+				<div class='description hide' id='desc-complex-2'>
+				
+				  <h3><span class='point'>2</span>Different bars</h3>
+				  <p>Each bar represents one document in the current results. The colors reflect the retrieval state of a web site. <br/>
+				  <div>
+				 	 <div class="pp_bar example pp_clicked"></div><p>
+				 	 Visited Link - this color mean the web site that has been visited in the past.</p>
+				 	 
+				 	 <div class="pp_bar example pp_new"></div>
+				 	 <p>New Link - A web site that has never been retrieved before with any other query.</p>
+					 
+				 	<div class="pp_bar example pp_unclicked"></div>
+			  		<p>Unclicked - A web site that has been retrieved before, but has never been clicked on.</p>
+				 </div>
+				</div>
+				
+				<div class='description hide' id='desc-complex-3'>
+				
+				  <h3><span class='point'>3</span>Icon</h3>
+				  <p>When available, a site is represented by a unique icon to help you recognize it quickly.</p> 
+				</div>
+				
+				<div class='description hide' id='desc-complex-4'>
+				
+				  <h3><span class='point'>4</span>Length of the bar</h3>
+				  <p>The length of each bar represents how often a web site has been retrieved before. 
+				  Newly-found documents are shown with long bars. If a document is found again, its bar gets shorter,
+				  like in <span class='point'>2</span> and <span class='point'>3</span>.</p> 
+				</div>
+				
+				<div class='description hide' id='desc-complex-5'>
+				
+				  <h3><span class='point'>5</span>Current selection</h3>
+				  <p>
+				  When you mouse over a bar, it gets highlighted. When looking at the search results page, the corresponding
+				  item is also highlighted, shown below:</p>
+				  <div>
+				  <img class="b" src="querypreview_highlight.jpg">
+				  </div>
+				  <p>On a non-search result page, the widget shows the snippet of the result instead.</p> 
+				  <div><img class="b" src="querypreview_snippet.jpg"></div>
+				  <div class='para'>This allows you to navigate quickly through the results, without going back to the search engine. To get back
+				  to the search results, click on the icon with the dark border near the top: 
+				  <div style="height: 22px; overflow: hidden; display: inline-block;">
+				  <img src="querypreview.png"></div>
+				  </div>
+				</div>
+				
+				<div class='description hide' id='desc-complex-6'>
+				
+				  <h3><span class='point'>6</span>Highlighting</h3>
+				  <p>The star on the left side of every bar allows you to bookmark a document, and shows when bookmarked 
+				  documents are found by queries.</p>  
+				</div>
+				
+				<div class='description hide' id='desc-complex-7'>
+				
+				  <h3><span class='point'>7</span>Current Page Indicator</h3>
+				  <p>The circle around the star indicates that this is the result page you are on right now. 
+				  If you click on a link on the website, the indicator reminds you of the retrieved document from which 
+				  you started browsing.</p>  
+				</div>
+				
+				<div class='description hide' id='desc-complex-8'>
+				
+				  <h3><span class='point'></span>Start using it...</h3>
+				  <p>Alright, now you know the basics. Go on <a href="http://www.google.com/">Google</a>, 
+				  <a href="http://www.yahoo.com/">Yahoo</a> or <a href="http://www.bing.com/">Bing</a> and try it yourself! 
+				  And remember that you can always return to this tutorial from the Options menu on the extension icon 
+				  (<img src="icons/on.png">).
+				</div>
+			
+				<div class='nav'>
+				<span class="button"> 
+				    <a title="next">
+				        Next
+				        <span class="arrows">
+				            &nbsp;&#187;
+				        </span>
+				    </a>
+					</span>
+				</div>
+				</td></tr>
+				</table>
+			</div>
+			
+			<div class="content">
+			<h2>Privacy and Logging</h2>
+			<p>This extension was created to study people's information seeking behaviors as part of our research project.
+			The goal of this project is to understand how people use the web when looking for information so that we can
+			make it easier to search the web.</p>
+			<p>We collect some data related to your use of this extension for the purposes of statistical analysis of
+			patterns of behavior. We use the data collected through this experiment for research purposes only.</p>
+			
+			<p>This extension records data in an anonymized way: no personally-identifying 
+			information is saved. Your queries and found documents are saved only as <a href="http://en.wikipedia.org/wiki/MD5">hashed</a> values.
+			This means that 
+			</p>
+			<ul>
+				<li>We do not know who you are, but we do know the IP address that your browser reports.</li>
+				<li>We cannot know which query you ran or which documents were found, but we can know that the same document was found
+			by different queries.</li>
+				<li>We do not log any URLs, keywords, or other potentially sensitive information.</li>
+			</ul>
+			<p>Specifically, we record the following information:</p>
+			<ul>
+			<li>Your IP address and the time the event was logged</li>
+			<li>Whether you selected a search result by clicking on a link or on the extension.</li>
+			<li>Hash strings that represent your queries and found web pages.</li>
+			<li>Time spent with the mouse on different interface parts (Search page and widget)</li>
+			<li>Various actions related to the extension (adding bookmarks by clicking the start, moving the widget,...).</li>
+			</ul>
+			<p>You can see exactly what is sent to our server by using your browser's debugging console.
+			<p>
+			Please help us by allowing us to log and process this information. <span id=logtext>You may opt out of logging and still use 
+			the extension by clicking</span> <a href="?nologging">here</a>, but we would really appreciate your participation with logging 
+			enabled to allow us to learn about people's searching behavior and thus improve this and other tools.</p>
+			<p>Currently the plugin has saved <span id="historyItems">0</span> history items. To delete this information click <a href="?reset">here</a>.</p></div>
+			<div class="content">
+			<h2>Contact</h2>
+			<p>For more information about this extension, please see our <a href="http://searchpanel.wordpress.com" target="_blank">web site</a>.</p>
+			</div>
+      </div>
+      <script type="text/javascript" src="help.js"></script>
+      
+</body>
+</html>
